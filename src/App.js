@@ -1,24 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const hello = (name) => {
+    console.log('Hello ' + name);
+  };
+
+  const numbers = [1, 2, 3, 4];
+  console.log('number 0: ', numbers[0]);
+  console.log('number 1: ', numbers[1]);
+  // const number1 = numbers[0];
+  // const number2 = numbers[1];
+  const [num1, num2] = numbers;
+  console.log('My Number: ', num1, num2);
+  // const sumAll = (...args) =>{
+  //   console.log
+  // }
+  const myInfo = () => {
+    return [10, 'John']
+  };
+
+  const result = myInfo();
+  const age = result[0];
+  const name = result[1];
+  console.log('age: ', age);
+  console.log('name: ', name);
+
+  // const [info, setInfor] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.My name is Phat
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>React APP</h1>
+      <div>Hello {hello('world')}</div>
+    </>
   );
 }
 
